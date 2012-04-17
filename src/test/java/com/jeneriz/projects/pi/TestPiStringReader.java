@@ -4,11 +4,15 @@ import static junit.framework.Assert.*;
 
 import org.junit.Test;
 
-public class TestPiStringReader {
+/**
+ * Common test to pass by all implementations.
+ */
+public abstract class TestPiStringReader {
+
+	protected PiStringReader reader;
 
 	@Test
 	public void testRead() {
-		PiStringReader reader = new PiStringReaderBasic();
 		String read = reader.read(100);
 		System.out.println(read);
 		assertEquals("1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679", read);
