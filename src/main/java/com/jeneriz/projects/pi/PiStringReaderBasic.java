@@ -12,6 +12,7 @@ import java.math.RoundingMode;
 public class PiStringReaderBasic implements PiStringReader {
 
 	private static final BigDecimal TWO = new BigDecimal("2");
+	private static final BigDecimal THREE = new BigDecimal("3");
 	private static final BigDecimal FOUR = new BigDecimal("4");
 	private static final BigDecimal FIVE = new BigDecimal("5");
 	private static final BigDecimal TWO_THIRTY_NINE = new BigDecimal("239");
@@ -47,7 +48,7 @@ public class PiStringReaderBasic implements PiStringReader {
 
 		boolean add = false;
 
-		for (BigDecimal n = new BigDecimal("3"); term.compareTo(BigDecimal.ZERO) != 0; n = n.add(TWO)) {
+		for (BigDecimal n = THREE; term.compareTo(BigDecimal.ZERO) != 0; n = n.add(TWO)) {
 			xpower = xpower.divide(x.pow(2), RoundingMode.DOWN);
 			term = xpower.divide(n, RoundingMode.DOWN);
 			sum = add ? sum.add(term) : sum.subtract(term);
